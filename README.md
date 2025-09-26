@@ -1,4 +1,40 @@
-Rules
+# Blackjack
+
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/784f9bb1-457c-4e0a-8c05-369a52c92def" />
+
+
+Blackjack Game | [https://blackjack.jonascsantos.com/](https://blackjack.jonascsantos.com/)
+
+---
+
+## Running locally
+
+### Install dependencies
+
+```sh
+pnpm install
+```
+
+### Start the development server
+
+```sh
+pnpm dev
+```
+
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+
+## Technologies
+
+* [Next.js](https://nextjs.org/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Zustand](https://zustand-demo.pmnd.rs/)  (browser persistency)
+* [Tailwind CSS](https://tailwindcss.com/)
+* 
+---
+## Rules
 
 * The game is played with a deck of 52 cards
 * Prior to starting the game the cards must be shuffled
@@ -9,13 +45,13 @@ Rules
 * After the player has had their turn, the dealer will turn over the hole card.
 * If the dealer has a lower score than the player the dealer will draw more cards until they either win, bust or draw
 
-Result
+### Result
 
 * If the player or the dealer busts then they will lose.
 * If no player has bust then the higher point total will win.
 * If both players have the same score the result is a draw unless one player has blackjack in which case they win.
 
-Scoring
+### Scoring
 
 * Aces may be counted as 1 or 11 points. The higher value applies if it does not cause the player to bust
 * Cards 2 to 9 points are same as face value (e.g 5 = 5 points)

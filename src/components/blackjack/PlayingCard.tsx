@@ -15,8 +15,8 @@ const PlayingCard = ({ suit, rank, className }: PlayingCardProps) => (
   <Image
     src={cardSrc(suit, rank)}
     alt={`${rank} of ${suit}`}
-    width={80}
-    height={120}
+    width={120}
+    height={180}
     className={className}
     priority
   />

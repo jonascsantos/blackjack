@@ -21,8 +21,8 @@ const HoleCardFlip = ({
     <motion.div
       key={uniqueKey}
       style={{
-        width: 80,
-        height: 120,
+        width: 120,
+        height: 180,
         position: "relative",
         transformStyle: "preserve-3d",
         perspective: 800,

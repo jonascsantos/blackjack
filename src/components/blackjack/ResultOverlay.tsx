@@ -81,26 +81,26 @@ const ResultOverlay = () => {
     <Dialog open={open}>
       <DialogContent
         showCloseButton={false}
-        className="sm:max-w-md text-center min-h-46"
+        className="sm:max-w-lg text-center min-h-56"
       >
         <DialogHeader>
           <DialogTitle
-            className={`text-center text-3xl font-extrabold tracking-wide ${colorClass}`}
+            className={`text-center text-5xl font-extrabold tracking-wide ${colorClass}`}
           >
             {headline}
           </DialogTitle>
           {phase === "roundOver" ? (
-            <DialogDescription className="opacity-90 text-center space-y-1 gap-2 flex flex-col items-center">
-              {message}
-              <span className="text-xs opacity-80 text-center">
+            <DialogDescription className="opacity-90 text-center space-y-2 gap-3 flex flex-col items-center">
+              <div className="text-lg font-semibold">{message}</div>
+              <span className="text-base opacity-80 text-center">
                 Player: {computeScore(playerHand).total} • Dealer:{" "}
                 {computeScore(dealerHand).total}
               </span>
             </DialogDescription>
           ) : null}
         </DialogHeader>
-        <div className="mt-2 flex items-center justify-center gap-3">
-          <Button variant="default" onClick={startGame}>
+        <div className="mt-4 flex items-center justify-center gap-4">
+          <Button variant="default" onClick={startGame} className="px-8 py-4 text-lg font-semibold">
             {phase === "idle" ? "Start game" : "Play again"}
           </Button>
         </div>

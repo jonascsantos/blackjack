@@ -15,17 +15,17 @@ const RulesDialog = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="secondary">
-          <Info className="h-4 w-4" />
+        <Button variant="secondary" className="px-6 py-3 text-lg font-semibold">
+          <Info className="h-6 w-6" />
           Rules
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-xl">
+      <DialogContent className="sm:max-w-2xl">
         <DialogHeader>
-          <DialogTitle>Rules</DialogTitle>
-          <DialogDescription>Read before you play</DialogDescription>
+          <DialogTitle className="text-2xl font-bold">Rules</DialogTitle>
+          <DialogDescription className="text-lg">Read before you play</DialogDescription>
         </DialogHeader>
-        <div className="space-y-3 text-sm">
+        <div className="space-y-4 text-base">
           <ul className="list-disc pl-5 space-y-1">
             <li>The game is played with a deck of 52 cards</li>
             <li>Prior to starting the game the cards must be shuffled</li>
@@ -43,15 +43,15 @@ const RulesDialog = () => {
             <li>If the dealer has a lower score than the player the dealer will draw more cards until they either win, bust or draw</li>
           </ul>
 
-          <div className="font-semibold">Result</div>
-          <ul className="list-disc pl-5 space-y-1">
+          <div className="font-bold text-lg">Result</div>
+          <ul className="list-disc pl-5 space-y-2">
             <li>If the player or the dealer busts then they will lose.</li>
             <li>If no player has bust then the higher point total will win.</li>
             <li>If both players have the same score the result is a draw unless one player has blackjack in which case they win.</li>
           </ul>
 
-          <div className="font-semibold">Scoring</div>
-          <ul className="list-disc pl-5 space-y-1">
+          <div className="font-bold text-lg">Scoring</div>
+          <ul className="list-disc pl-5 space-y-2">
             <li>Aces may be counted as 1 or 11 points. The higher value applies if it does not cause the player to bust</li>
             <li>Cards 2 to 9 points are same as face value (e.g 5 = 5 points)</li>
             <li>Tens and face cards count as ten points.</li>

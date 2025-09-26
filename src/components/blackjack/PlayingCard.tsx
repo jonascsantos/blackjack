@@ -17,7 +17,7 @@ const PlayingCard = ({ suit, rank, className }: PlayingCardProps) => (
     alt={`${rank} of ${suit}`}
     width={120}
     height={180}
-    className={className}
+    className={`w-20 h-30 sm:w-20 sm:h-30 lg:w-24 lg:h-36 ${className || ''}`}
     priority
   />
 );

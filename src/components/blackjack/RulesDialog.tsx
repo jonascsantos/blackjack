@@ -15,17 +15,17 @@ const RulesDialog = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="secondary" className="px-6 py-3 text-lg font-semibold">
-          <Info className="h-6 w-6" />
-          Rules
+        <Button variant="secondary" className="px-2 py-1 sm:px-4 sm:py-2 lg:px-6 lg:py-3 text-xs sm:text-sm lg:text-lg font-semibold cursor-pointer">
+          <Info className="h-3 w-3 sm:h-4 sm:w-4 lg:h-6 lg:w-6" />
+          <span className="hidden sm:inline">Rules</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-2xl">
+      <DialogContent className="max-w-[95vw] sm:max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold">Rules</DialogTitle>
-          <DialogDescription className="text-lg">Read before you play</DialogDescription>
+          <DialogTitle className="text-xl sm:text-2xl font-bold">Rules</DialogTitle>
+          <DialogDescription className="text-sm sm:text-lg">Read before you play</DialogDescription>
         </DialogHeader>
-        <div className="space-y-4 text-base">
+        <div className="space-y-3 sm:space-y-4 text-sm sm:text-base">
           <ul className="list-disc pl-5 space-y-1">
             <li>The game is played with a deck of 52 cards</li>
             <li>Prior to starting the game the cards must be shuffled</li>
@@ -43,15 +43,15 @@ const RulesDialog = () => {
             <li>If the dealer has a lower score than the player the dealer will draw more cards until they either win, bust or draw</li>
           </ul>
 
-          <div className="font-bold text-lg">Result</div>
-          <ul className="list-disc pl-5 space-y-2">
+          <div className="font-bold text-base sm:text-lg">Result</div>
+          <ul className="list-disc pl-5 space-y-1 sm:space-y-2">
             <li>If the player or the dealer busts then they will lose.</li>
             <li>If no player has bust then the higher point total will win.</li>
             <li>If both players have the same score the result is a draw unless one player has blackjack in which case they win.</li>
           </ul>
 
-          <div className="font-bold text-lg">Scoring</div>
-          <ul className="list-disc pl-5 space-y-2">
+          <div className="font-bold text-base sm:text-lg">Scoring</div>
+          <ul className="list-disc pl-5 space-y-1 sm:space-y-2">
             <li>Aces may be counted as 1 or 11 points. The higher value applies if it does not cause the player to bust</li>
             <li>Cards 2 to 9 points are same as face value (e.g 5 = 5 points)</li>
             <li>Tens and face cards count as ten points.</li>

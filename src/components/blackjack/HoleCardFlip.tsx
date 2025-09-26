@@ -20,9 +20,8 @@ const HoleCardFlip = ({
   return (
     <motion.div
       key={uniqueKey}
+      className="w-20 h-30 sm:w-20 sm:h-30 lg:w-24 lg:h-36"
       style={{
-        width: 120,
-        height: 180,
         position: "relative",
         transformStyle: "preserve-3d",
         perspective: 800,

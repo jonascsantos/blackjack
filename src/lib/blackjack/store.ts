@@ -87,12 +87,12 @@ export const useBlackjackStore = create<BlackjackStore>()(
   },
 
   dealInitial: () => {
-    let { deck, phase } = get();
+    const { deck, phase } = get();
     log("action: dealInitial", { phase, deck: deck.length });
-    if (deck.length < 4) deck = shuffleDeck(newDeck());
-    const playerHand: Hand = [deck[0], deck[2]];
-    const dealerHand: Hand = [deck[1], deck[3]];
-    set((s) => ({ deck: deck.slice(4), playerHand, dealerHand, phase: "playerTurn", message: "", result: null, roundId: s.roundId + 1 }));
+    const shuffledDeck = deck.length < 4 ? shuffleDeck(newDeck()) : deck;
+    const playerHand: Hand = [shuffledDeck[0], shuffledDeck[2]];
+    const dealerHand: Hand = [shuffledDeck[1], shuffledDeck[3]];
+    set((s) => ({ deck: shuffledDeck.slice(4), playerHand, dealerHand, phase: "playerTurn", message: "", result: null, roundId: s.roundId + 1 }));
   },
 
   hit: () => {
@@ -112,18 +112,20 @@ export const useBlackjackStore = create<BlackjackStore>()(
   },
 
   stand: async () => {
-    let { deck, dealerHand, playerHand, phase } = get();
+    const { deck, dealerHand, playerHand, phase } = get();
     if (phase !== "playerTurn") return;
     set({ phase: "dealerTurn" });
     const playerTotal = computeScore(playerHand).total;
-    let dealerTotal = computeScore(dealerHand).total;
+    let currentDealerHand = dealerHand;
+    let currentDeck = deck;
+    let dealerTotal = computeScore(currentDealerHand).total;
     while (dealerTotal < playerTotal && dealerTotal < 22) {
       await new Promise((r) => setTimeout(r, 800));
-      const next = deck[0];
-      dealerHand = [...dealerHand, next];
-      deck = deck.slice(1);
-      set({ deck, dealerHand });
-      dealerTotal = computeScore(dealerHand).total;
+      const next = currentDeck[0];
+      currentDealerHand = [...currentDealerHand, next];
+      currentDeck = currentDeck.slice(1);
+      set({ deck: currentDeck, dealerHand: currentDealerHand });
+      dealerTotal = computeScore(currentDealerHand).total;
     }
     let message = "Push";
     let result: BlackjackResult = "push";
@@ -147,7 +149,7 @@ export const useBlackjackStore = create<BlackjackStore>()(
         result = "dealerWin";
       }
     }
-    set({ deck, dealerHand, phase: "roundOver", message, result });
+    set({ deck: currentDeck, dealerHand: currentDealerHand, phase: "roundOver", message, result });
   },
 
   reset: () => {

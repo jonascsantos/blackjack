@@ -31,11 +31,8 @@ const BlackjackTable = () => {
     playerHand,
     dealerHand,
     phase,
-    message,
     hit,
     stand,
-    startGame,
-    reset,
     roundId,
   } = useBlackjackStore();
   const playerScore = React.useMemo(() => computeScore(playerHand).total, [playerHand]);

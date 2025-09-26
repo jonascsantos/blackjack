@@ -30,13 +30,13 @@ const RulesDialog = () => {
             <li>The game is played with a deck of 52 cards</li>
             <li>Prior to starting the game the cards must be shuffled</li>
             <li>
-              The dealer will give two cards to the player and two cards to themself. One of the dealer cards is dealt face up. The facedown card is called the "hole card."
+              The dealer will give two cards to the player and two cards to themself. One of the dealer cards is dealt face up. The facedown card is called the &quot;hole card.&quot;
             </li>
             <li>
               Play begins with the player. The following choices available to the player:
               <ul className="list-disc pl-5 mt-1 space-y-1">
-                <li>"Stand": Player stays put with their cards.</li>
-                <li>"Hit": Player draws another card. If this card causes the player's total points to exceed 21 ("bust") then they will lose.</li>
+                <li>&quot;Stand&quot;: Player stays put with their cards.</li>
+                <li>&quot;Hit&quot;: Player draws another card. If this card causes the player&apos;s total points to exceed 21 (&quot;bust&quot;) then they will lose.</li>
               </ul>
             </li>
             <li>After the player has had their turn, the dealer will turn over the hole card.</li>
@@ -55,7 +55,7 @@ const RulesDialog = () => {
             <li>Aces may be counted as 1 or 11 points. The higher value applies if it does not cause the player to bust</li>
             <li>Cards 2 to 9 points are same as face value (e.g 5 = 5 points)</li>
             <li>Tens and face cards count as ten points.</li>
-            <li>The value of a hand is the sum of the point values of the individual cards. Except, a "blackjack" is the highest hand, consisting of one ace and any 10-point card, and it outranks all other 21-point hands.</li>
+            <li>The value of a hand is the sum of the point values of the individual cards. Except, a &quot;blackjack&quot; is the highest hand, consisting of one ace and any 10-point card, and it outranks all other 21-point hands.</li>
           </ul>
         </div>
       </DialogContent>
